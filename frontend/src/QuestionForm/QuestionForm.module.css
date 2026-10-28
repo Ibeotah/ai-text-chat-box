@@ -1,0 +1,268 @@
+.question-form {
+  width: 100%;
+}
+
+/* --------------------
+   Question form
+-------------------- */
+
+.question-form-form {
+  padding: 18px;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.question-form-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.question-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question-input-wrapper input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  outline: none;
+  background: #0f172a;
+  color: #f8fafc;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.question-input-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.question-input-wrapper input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.submit-button {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* --------------------
+   Result sections
+-------------------- */
+
+.result-section {
+  margin-top: 24px;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+}
+
+.section-label {
+  color: #60a5fa;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.section-heading h2 {
+  margin: 4px 0 0;
+  color: #f8fafc;
+  font-size: 1.25rem;
+}
+
+/* --------------------
+   Answer
+-------------------- */
+
+.answer-section {
+  animation: answer-slide-in 0.5s ease-out both;
+}
+
+.answer-card {
+  padding: 18px;
+  border: 1px solid #1e3a8a;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.2),
+    rgba(15, 23, 42, 0.95)
+  );
+}
+
+.answer-card p {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+@keyframes answer-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --------------------
+   Documents
+-------------------- */
+
+.documents-section {
+  animation: documents-slide-in 0.5s ease-out both;
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes documents-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --------------------
+   Expander
+-------------------- */
+
+.expander {
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.expander-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  background: transparent;
+  color: #cbd5e1;
+  text-align: left;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.expander-button:hover {
+  background: #172033;
+}
+
+.expander-icon {
+  flex-shrink: 0;
+  color: #60a5fa;
+  font-size: 1.2rem;
+}
+
+.expander-content {
+  margin: 0;
+  padding: 0 15px 15px;
+  border-top: 1px solid #1e293b;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* --------------------
+   Tablet and desktop
+-------------------- */
+
+@media (min-width: 600px) {
+  .question-form-form {
+    padding: 22px;
+  }
+
+  .question-input-wrapper {
+    flex-direction: row;
+  }
+
+  .question-input-wrapper input {
+    flex: 1;
+  }
+
+  .submit-button {
+    min-width: 100px;
+  }
+
+  .answer-card {
+    padding: 22px;
+  }
+}
+
+@media (min-width: 900px) {
+  .question-form-form {
+    padding: 24px;
+  }
+
+  .answer-card {
+    padding: 24px;
+  }
+
+  .answer-card p,
+  .expander-content {
+    font-size: 0.95rem;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .answer-section,
+  .documents-section {
+    animation: none;
+  }
+
+  .submit-button,
+  .question-input-wrapper input {
+    transition: none;
+  }
+}
