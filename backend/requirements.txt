@@ -46,7 +46,7 @@ catalogue==2.0.10 ; python_full_version >= '3.11'
     #   spacy
     #   srsly
     #   thinc
-certifi==2026.7.22
+# certifi==2026.7.22
     # via
     #   httpcore
     #   httpx
