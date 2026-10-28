@@ -30,7 +30,7 @@ origins = [
     "http://localhost:3000",
      "http://localhost:5173",
      "http://localhost:5174",
-     "https://frontend-eta-six-36.vercel.app/"
+     "https://frontend-eta-six-36.vercel.app"
 ]
 
 app.add_middleware(
