@@ -1,5 +1,3 @@
-
-
 import logo from "./assets/hero.png";
 import "./App.css";
 import QuestionForm from "./QuestionForm/QuestionForm";
@@ -17,7 +15,9 @@ function App() {
             <h1>Fullstack-RAG</h1>
 
             <p>
-              Ask questions and get answers grounded in your knowledge base.
+              Get answers to your questions and build your knowledge of
+              securities and bonds. Answers are based on official sources such
+              as the SEC Nigeria website.
             </p>
           </div>
         </header>

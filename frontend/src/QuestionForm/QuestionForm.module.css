@@ -52,6 +52,10 @@
 }
 
 .submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   min-height: 48px;
   padding: 0 20px;
   border: 0;
@@ -257,7 +261,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .answer-section,
-  .documents-section {
+  .documents-section, .slow-notice {
     animation: none;
   }
 
@@ -265,4 +269,101 @@
   .question-input-wrapper input {
     transition: none;
   }
+}
+/* --------------------
+   Slow response notice
+-------------------- */
+
+.slow-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid #854d0e;
+  border-radius: 12px;
+  background: rgba(113, 63, 18, 0.25);
+  color: #fde68a;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  animation: notice-fade-in 0.3s ease-out both;
+}
+
+.slow-notice p {
+  margin: 0;
+}
+
+@keyframes notice-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------
+   Error message
+-------------------- */
+
+.error-message {
+  margin: 14px 0 0;
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+/* --------------------
+   Sample questions
+-------------------- */
+
+.sample-questions {
+  margin-top: 16px;
+}
+
+.sample-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.sample-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sample-chip {
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #1e3a8a;
+  border-radius: 999px;
+  background: rgba(30, 64, 175, 0.12);
+  color: #bfdbfe;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sample-chip:hover:not(:disabled) {
+  background: rgba(30, 64, 175, 0.3);
+  border-color: #3b82f6;
+}
+
+.sample-chip:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.sample-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
